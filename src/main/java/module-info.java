@@ -9,6 +9,7 @@ module personne.personne {
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
+    requires javafx.graphics;
 
     opens personne.personne to javafx.fxml;
     exports personne.personne;
