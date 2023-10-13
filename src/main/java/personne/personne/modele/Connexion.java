@@ -1,4 +1,4 @@
-package personne.personne.Connexion;
+package personne.personne.modele;
 
 
 import java.sql.Connection;
@@ -16,6 +16,7 @@ public class Connexion {
     }
 
     public void connect(String jdbcUrl, String username, String password) throws SQLException {
+        //connection = DriverManager.getConnection(jdbcUrl, username, password);
         connection = DriverManager.getConnection(jdbcUrl, username, password);
     }
 

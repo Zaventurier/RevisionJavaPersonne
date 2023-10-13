@@ -1,0 +1,259 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
+--
+-- Hôte : localhost:3306
+-- Généré le : ven. 13 oct. 2023 à 12:29
+-- Version du serveur : 5.7.39
+-- Version de PHP : 8.2.0
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Base de données : `TP_revision_Java`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `Avocat`
+--
+
+CREATE TABLE `Avocat` (
+  `id` int(11) NOT NULL,
+  `nombreAffaires` int(11) NOT NULL,
+  `adresseCabinet` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `Avocat`
+--
+
+INSERT INTO `Avocat` (`id`, `nombreAffaires`, `adresseCabinet`) VALUES
+(1, 100, '123, rue de la Paix, Paris'),
+(2, 50, '456, avenue des Champs-Élysées, Paris');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `Enseignant`
+--
+
+CREATE TABLE `Enseignant` (
+  `id` int(11) NOT NULL,
+  `nombreCours` int(11) NOT NULL,
+  `spécialité` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `Enseignant`
+--
+
+INSERT INTO `Enseignant` (`id`, `nombreCours`, `spécialité`) VALUES
+(1, 20, 'Informatique'),
+(2, 15, 'Mathématiques');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `Permanent`
+--
+
+CREATE TABLE `Permanent` (
+  `id` int(11) NOT NULL,
+  `numéroBureau` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `Permanent`
+--
+
+INSERT INTO `Permanent` (`id`, `numéroBureau`) VALUES
+(1, 101),
+(2, 102);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `Personne`
+--
+
+CREATE TABLE `Personne` (
+  `id` int(11) NOT NULL,
+  `nom` varchar(255) NOT NULL,
+  `numeroSécu` int(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `Personne`
+--
+
+INSERT INTO `Personne` (`id`, `nom`, `numeroSécu`) VALUES
+(1, 'Jean Dupont', 123456789),
+(2, 'Marie Durand', 987654321);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `Vacataire`
+--
+
+CREATE TABLE `Vacataire` (
+  `id` int(11) NOT NULL,
+  `nombreVacations` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `Vacataire`
+--
+
+INSERT INTO `Vacataire` (`id`, `nombreVacations`) VALUES
+(1, 10),
+(2, 5);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `Vendeur`
+--
+
+CREATE TABLE `Vendeur` (
+  `id` int(11) NOT NULL,
+  `ancienneté` int(11) NOT NULL,
+  `nomDuStand` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `Vendeur`
+--
+
+INSERT INTO `Vendeur` (`id`, `ancienneté`, `nomDuStand`) VALUES
+(1, 10, 'Stand A'),
+(2, 5, 'Stand B');
+
+--
+-- Index pour les tables déchargées
+--
+
+--
+-- Index pour la table `Avocat`
+--
+ALTER TABLE `Avocat`
+  ADD KEY `id` (`id`);
+
+--
+-- Index pour la table `Enseignant`
+--
+ALTER TABLE `Enseignant`
+  ADD KEY `id` (`id`);
+
+--
+-- Index pour la table `Permanent`
+--
+ALTER TABLE `Permanent`
+  ADD KEY `id` (`id`);
+
+--
+-- Index pour la table `Personne`
+--
+ALTER TABLE `Personne`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `Vacataire`
+--
+ALTER TABLE `Vacataire`
+  ADD KEY `id` (`id`);
+
+--
+-- Index pour la table `Vendeur`
+--
+ALTER TABLE `Vendeur`
+  ADD KEY `id` (`id`);
+
+--
+-- AUTO_INCREMENT pour les tables déchargées
+--
+
+--
+-- AUTO_INCREMENT pour la table `Avocat`
+--
+ALTER TABLE `Avocat`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT pour la table `Enseignant`
+--
+ALTER TABLE `Enseignant`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT pour la table `Permanent`
+--
+ALTER TABLE `Permanent`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT pour la table `Personne`
+--
+ALTER TABLE `Personne`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT pour la table `Vacataire`
+--
+ALTER TABLE `Vacataire`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT pour la table `Vendeur`
+--
+ALTER TABLE `Vendeur`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- Contraintes pour les tables déchargées
+--
+
+--
+-- Contraintes pour la table `Avocat`
+--
+ALTER TABLE `Avocat`
+  ADD CONSTRAINT `avocat_ibfk_1` FOREIGN KEY (`id`) REFERENCES `Personne` (`id`);
+
+--
+-- Contraintes pour la table `Enseignant`
+--
+ALTER TABLE `Enseignant`
+  ADD CONSTRAINT `enseignant_ibfk_1` FOREIGN KEY (`id`) REFERENCES `Personne` (`id`);
+
+--
+-- Contraintes pour la table `Permanent`
+--
+ALTER TABLE `Permanent`
+  ADD CONSTRAINT `permanent_ibfk_1` FOREIGN KEY (`id`) REFERENCES `Enseignant` (`id`);
+
+--
+-- Contraintes pour la table `Vacataire`
+--
+ALTER TABLE `Vacataire`
+  ADD CONSTRAINT `vacataire_ibfk_1` FOREIGN KEY (`id`) REFERENCES `Enseignant` (`id`);
+
+--
+-- Contraintes pour la table `Vendeur`
+--
+ALTER TABLE `Vendeur`
+  ADD CONSTRAINT `vendeur_ibfk_1` FOREIGN KEY (`id`) REFERENCES `Personne` (`id`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
