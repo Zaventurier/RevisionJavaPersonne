@@ -89,7 +89,7 @@ INSERT INTO `Permanent` (`id`, `numéroBureau`) VALUES
 CREATE TABLE `Personne` (
   `id` int(11) NOT NULL,
   `nom` varchar(255) NOT NULL,
-  `numeroSécu` int(15) NOT NULL
+  `numeroSecu` int(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --

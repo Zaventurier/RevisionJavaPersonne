@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import personne.personne.Connexion.Connexion;
 import personne.personne.controleur.CRUDpersonne;
 
 import java.io.IOException;
@@ -18,13 +19,8 @@ public class HelloApplication extends Application {
         stage.setScene(scene);
         stage.show();
 
-        CRUDpersonne cruDoperation = new CRUDpersonne();
-        try{
-            cruDoperation.test();
-            System.out.println("OK");
-        }catch (SQLException e){
-            System.out.println("Erreur");
-        }
+        Connexion con = new Connexion();
+        CRUDpersonne cruDoperation = new CRUDpersonne(con);
 
     }
 
