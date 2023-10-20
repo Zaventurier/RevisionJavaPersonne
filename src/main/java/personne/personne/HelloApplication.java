@@ -17,6 +17,7 @@ public class HelloApplication extends Application {
         stage.setTitle("Hello!");
         stage.setScene(scene);
         stage.show();
+        //scene.getStylesheets().add(getClass().getResource("./style/style.css").toExternalForm());
 
         Connexion con = new Connexion();
         CRUDpersonne cruDoperation = new CRUDpersonne(con);
