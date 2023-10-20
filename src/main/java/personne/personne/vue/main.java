@@ -14,7 +14,7 @@ import personne.personne.controleur.CRUDvendeur;
 public class main {
     public static void main(String[] args) throws SQLException {
         /**
-         * Ce fichier me permet de tester les CRUD
+         * Ce fichier me permet de tester les CRUD - Ne pas toucher, ne pas modifier
          */
 
         Scanner sc = new Scanner(System.in);

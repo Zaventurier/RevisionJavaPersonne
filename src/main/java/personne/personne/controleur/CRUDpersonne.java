@@ -31,7 +31,6 @@ public class CRUDpersonne {
         } catch (SQLException e) {
             System.err.println("Erreur lors de l'insertion de la personne : " + e.getMessage());
         }
-
     }
 
     public void readAllPersonne() throws SQLException {
@@ -68,7 +67,7 @@ public class CRUDpersonne {
         }
     }
 
-    public void setPersonne(int id, String nom, int numSecu) throws SQLException {
+    public void updatePersonne(int id, String nom, int numSecu) throws SQLException {
         connexion.connect();
 
         String delete = "UPDATE personne SET nom = ?, numeroSecu = ? WHERE id = (?)";
