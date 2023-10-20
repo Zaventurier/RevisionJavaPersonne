@@ -68,4 +68,19 @@ public class CRUDpersonne {
         }
     }
 
+    public void setPersonne(int id, String nom, int numSecu) throws SQLException {
+        connexion.connect();
+
+        String delete = "UPDATE personne SET nom = ?, numeroSecu = ? WHERE id = (?)";
+        try (PreparedStatement con = connexion.getConnection().prepareStatement(delete)) {
+            con.setString(1, nom);
+            con.setInt(2, numSecu);
+            con.setInt(3, id);
+            con.executeUpdate();
+            System.out.println("Modification effectué avec succès !");
+        } catch (SQLException e) {
+            System.err.println("Erreur lors de la modification de la personne : " + e.getMessage());
+        }
+    }
+
 }
