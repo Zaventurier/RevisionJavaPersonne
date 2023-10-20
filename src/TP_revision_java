@@ -50,16 +50,16 @@ INSERT INTO `Avocat` (`id`, `nombreAffaires`, `adresseCabinet`) VALUES
 CREATE TABLE `Enseignant` (
   `id` int(11) NOT NULL,
   `nombreCours` int(11) NOT NULL,
-  `spécialité` varchar(255) NOT NULL
+  `spécialite` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `Enseignant`
 --
 
-INSERT INTO `Enseignant` (`id`, `nombreCours`, `spécialité`) VALUES
+INSERT INTO `Enseignant` (`id`, `nombreCours`, `spécialite`) VALUES
 (1, 20, 'Informatique'),
-(2, 15, 'Mathématiques');
+(2, 15, 'Mathematiques');
 
 -- --------------------------------------------------------
 
@@ -69,14 +69,14 @@ INSERT INTO `Enseignant` (`id`, `nombreCours`, `spécialité`) VALUES
 
 CREATE TABLE `Permanent` (
   `id` int(11) NOT NULL,
-  `numéroBureau` int(11) NOT NULL
+  `numeroBureau` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `Permanent`
 --
 
-INSERT INTO `Permanent` (`id`, `numéroBureau`) VALUES
+INSERT INTO `Permanent` (`id`, `numeroBureau`) VALUES
 (1, 101),
 (2, 102);
 
@@ -96,7 +96,7 @@ CREATE TABLE `Personne` (
 -- Déchargement des données de la table `Personne`
 --
 
-INSERT INTO `Personne` (`id`, `nom`, `numeroSécu`) VALUES
+INSERT INTO `Personne` (`id`, `nom`, `numeroSecu`) VALUES
 (1, 'Jean Dupont', 123456789),
 (2, 'Marie Durand', 987654321);
 
@@ -127,7 +127,7 @@ INSERT INTO `Vacataire` (`id`, `nombreVacations`) VALUES
 
 CREATE TABLE `Vendeur` (
   `id` int(11) NOT NULL,
-  `ancienneté` int(11) NOT NULL,
+  `anciennete` int(11) NOT NULL,
   `nomDuStand` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -135,7 +135,7 @@ CREATE TABLE `Vendeur` (
 -- Déchargement des données de la table `Vendeur`
 --
 
-INSERT INTO `Vendeur` (`id`, `ancienneté`, `nomDuStand`) VALUES
+INSERT INTO `Vendeur` (`id`, `anciennete`, `nomDuStand`) VALUES
 (1, 10, 'Stand A'),
 (2, 5, 'Stand B');
 

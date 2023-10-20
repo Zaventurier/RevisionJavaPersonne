@@ -6,7 +6,6 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import personne.personne.Connexion.Connexion;
 import personne.personne.controleur.CRUDpersonne;
-
 import java.io.IOException;
 import java.sql.SQLException;
 
