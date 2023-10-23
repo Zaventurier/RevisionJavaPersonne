@@ -1,0 +1,10 @@
+.center {
+    -fx-alignment: center;
+}
+
+.text-field {
+    -fx-font-size: 15px;
+    -fx-max-width: 200px;
+    -fx-max-height: 30px;
+    -fx-alignment: center;
+}
