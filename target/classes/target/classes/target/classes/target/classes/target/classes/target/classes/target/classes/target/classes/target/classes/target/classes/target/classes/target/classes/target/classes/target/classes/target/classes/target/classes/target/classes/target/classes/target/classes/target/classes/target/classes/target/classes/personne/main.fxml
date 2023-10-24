@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.text.Font?>
+
+<TabPane maxHeight="500" maxWidth="740" minHeight="500" minWidth="740" style="-fx-font-family: Times New Roman;" stylesheets="@../../../java/personne/personne/style/style.css" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+  <tabs>
+    <Tab style="-fx-font-family: 'Times New Roman';" text="Ajouter Personne">
+         <content>
+            <TextField id="nomPersonne" alignment="CENTER" prefHeight="47.0" prefWidth="646.0" promptText="Nom" styleClass="text-field">
+               <padding>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </padding>
+               <font>
+                  <Font name="Times New Roman" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </TextField>
+         </content></Tab>
+    <Tab style="-fx-font-family: 'Times New Roman';" text="Modifier Personne" />
+      <Tab style="-fx-font-family: 'Times New Roman';" text="Supprimer Personne" />
+  </tabs>
+</TabPane>
